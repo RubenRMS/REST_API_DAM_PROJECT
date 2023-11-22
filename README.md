@@ -1,5 +1,5 @@
 # REST_API_DAM_PROJECT
-Api in PHP that was done for a class project
+API in PHP that was done for a class project
 
 Project was about a car renting app, there was an Android and PC clients with which the API would communicate
 
