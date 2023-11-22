@@ -1,0 +1,211 @@
+Register:
+http://10.2.66.56/index.php/user/register?
+firstname=test2&
+lastname=test2&
+phone=123&
+addr=test2&
+username=test2&
+email=test2@test.net&
+password=test2
+
+Login:
+http://10.2.66.56/index.php/user/login?
+password=test2&
+email=test2@test.net
+
+Insert car:
+http://10.2.66.56/index.php/user/newcar?
+make=toyota&
+model=yaris&year=1998&
+color=red&
+seats=5&
+plate=AB3F524&
+class_id=2&
+usr_id=1&
+photo=https://www.gizmodo.com.au/wp-content/uploads/sites/2/2018/05/18/j2a5satapj5tgiktq0gl.png&
+pricexday=55.45&
+type=car1
+
+delete car:
+http://10.2.66.56/index.php/user/delcar?car_id=4
+
+edit car:
+http://10.2.66.56/index.php/user/editcar?plate=ABC123&new_plate=ABC321 --DEPRECATED
+
+http://10.2.66.56/index.php/user/editcar?
+car_id=4&
+make=toyota2&
+model=yaris2&
+year=1998&
+color=red&
+seats=5&
+plate=AB3524&
+class_id=2&
+usr_id=1&
+photo=https://www.gizmodo.com.au/wp-content/uploads/sites/2/2018/05/18/j2a5satapj5tgiktq0gl.png&
+pricexday=60.50&
+type=moto
+
+
+create profile: --DEPRECATED DO NOT USE
+http://10.2.66.56/index.php/user/newprofile?usr_id=1
+
+update profile:
+http://10.2.66.56/index.php/user/editprofile?bio=bio1&location=place1&user_id=2
+
+(if either bio or location are sent without data, data present in DB remains in place)
+
+delete profile:
+http://10.2.66.56/index.php/user/deleteprofile?user_id=2
+
+cars list by owner_id:
+(owner_id is user_id from users)
+http://10.2.66.56/index.php/user/carsbyowner?owner_id=1
+
+cars list (all):
+
+http://10.2.66.56/index.php/user/carsall
+
+publish car into profile:
+
+http://10.2.66.56/index.php/user/carpublish?user_id=13&car_id=11
+
+unpublish car from profile:
+
+http://10.2.66.56/index.php/user/carunpublish?car_id=11
+
+publishes all cars from a user (owner):
+
+http://10.2.66.56/index.php/user/carpublishall?user_id=13
+
+unpublishes all cars:
+
+http://10.2.66.56/index.php/user/carunpublishall?user_id=13
+
+all car classes:
+http://10.2.66.56/index.php/user/carclassall
+
+car details by ID:
+
+http://10.2.66.56/index.php/user/carinfo?car_id=4
+
+
+new rent:
+
+http://10.2.66.56/index.php/user/rentnew?
+renter_id=13&
+rentee_id=3&
+start_date=2023-04-03&
+end_date=2023-04-10&
+total_cost=200&
+car_id=12
+
+edit rent:
+
+http://10.2.66.56/index.php/user/rentedit?
+start_date=2023-04-05&
+end_date=2023-04-15&
+total_cost=220&
+rental_id=1
+
+delete rent:
+
+http://10.2.66.56/index.php/user/rentdel?
+rental_id=3
+
+Rentals list (all rentals):
+
+http://10.2.66.56/index.php/user/rentalslist?
+filter=all
+
+Rentals list (by user):
+
+http://10.2.66.56/index.php/user/rentalslist?
+filter=my&
+user_id=3
+
+active rentals:
+Active rentals, rentals that are in progress,
+where the current date is between the start and end-date from the contract
+
+http://10.2.66.56/index.php/user/rentalsactive?
+filter=all
+
+active rentals (by user):
+http://10.2.66.56/index.php/user/rentalsactive?
+filter=my&
+user_id=3
+
+inactive rentals:
+Rentals that have not begun yet, where the current date
+is before the start date from the contract
+
+http://10.2.66.56/index.php/user/rentalsinactive?
+filter=all
+
+inactive rentals(by user): --TODO
+
+http://10.2.66.56/index.php/user/rentalsinactive?
+filter=my&
+user_id=3
+
+closed rentals:
+Rentals where the rental end date has already passed.
+
+http://10.2.66.56/index.php/user/rentalsclosed?
+filter=all
+
+closed rentals (by user):--TODO
+
+http://10.2.66.56/index.php/user/rentalsclosed?
+filter=all&
+user_id=3
+
+
+rental rating:
+inserts a rating and message to a rental
+
+http://10.2.66.56/index.php/user/rentalreview?
+rental_id=6&
+msg=good service&
+score=8
+
+(score is 0-10, use dropdown menu/radio buttons for choice)
+
+Rented cars / cars by rentee:
+cars that a user has rented
+
+http://10.2.66.56/index.php/user/rentalsfiltered?
+filter=rented&
+user_id=13
+
+Rentees / cars by renter:
+users that have rented a user's car
+
+http://10.2.66.56/index.php/user/rentalsfiltered?
+filter=rentees&
+user_id=3
+
+cars available for renting in public profile:
+
+http://10.2.66.56/index.php/user/profilecars?
+user_id=13
+
+
+Cars by location:
+http://10.2.66.56/index.php/user/carsfiltered?
+filter=location&
+loc=Paris
+
+
+delete user:
+Marks a user as deleted and they won't be able to login again
+http://10.2.66.56/index.php/user/deleteuser?
+user_id=74
+
+
+Cars by type:
+http://10.2.66.56/index.php/user/carsallfiltered?
+filter=Coche
+
+
